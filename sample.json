@@ -1,0 +1,32 @@
+{
+	"recipes":[
+	{'name':'Cheese Cake',
+	'desc':'A delicous cheesecake.',
+	'recipes':[
+	{
+		'name':'Base',
+		'ingredients':[
+		'100gm marg',
+		'1/2 cup sugar',
+		'1 1/2 cup flour',
+		'1/2 tsp baking powder',
+		'pinch salt',
+		'1 egg'
+		],
+		instructions:'Press into dish and bake 15/20 min at 180 °C'
+	},
+	{
+		'name':'Cheese',
+		ingredients:[
+		'1 kilo quarg (cream cheese)',
+		'1 sour cream - 300ml',
+		'3/4 package vanilla pudding',
+		'1 cup sugar',
+		'4 eggs'
+		]
+		'instructions':'Mix by hand,\npour onto base, or biscuits with marg,\nand bake 1hr at 180 °C'
+	}
+	]
+	}
+	]
+}
