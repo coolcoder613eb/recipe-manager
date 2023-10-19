@@ -28,6 +28,17 @@
                     "instructions": "Mix by hand,\npour onto base, or biscuits with marg,\nand bake 1hr at 180 \u00b0C"
                 }
             ]
+        },
+        {
+            "name": "Pancakes",
+            "desc": "Pancakes, great for breakfast.",
+            "ingredients": [
+                "5 eggs",
+                "1/2 cup milk",
+                "6 tbs flour (plenty!)",
+                "2 tbs sugar"
+            ],
+            "instructions": "Mix and fry."
         }
     ]
 }
