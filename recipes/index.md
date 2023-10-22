@@ -1,3 +1,4 @@
+<title>Recipes</title>
 # Recipes
 
 * * *

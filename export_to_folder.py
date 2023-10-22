@@ -3,48 +3,34 @@ import os
 
 FOLDER = "./recipes"
 
+
+def pathify(name, ext):  # example: pathify("Cheese Cake",".md")
+    return name.replace(" ", "-").replace(".", "-").replace("/", "-") + ext
+
+
 if not os.path.exists(FOLDER):
     os.mkdir(FOLDER)
 
 recipes = export_markdown()
 
-for name, text in recipes.items():
+for recipe in recipes:
     with open(
-        os.path.join(
-            FOLDER, name.replace(" ", "-").replace(".", "-").replace("/", "-") + ".md"
-        ),
+        os.path.join(FOLDER, pathify(recipe["name"], ".md")),
         "w",
     ) as f:
-        f.write(text)
+        f.write(recipe["text"])
 
-text = """<!DOCTYPE HTML>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Recipes</title>
-</head>
-<body>
-<h1>Recipes</h1>
-<hr>
-<ul>
-"""
-for name in recipes:
-    text += f'<li><a href="{name.replace(" ", "-").replace(".", "-").replace("/", "-") + ".html"}">{name}</a></li>'
-text += """</ul>
-<hr>
-</body>
-</html>
-"""
 
-text="""# Recipes
+text = """<title>Recipes</title>
+# Recipes
 
 * * *
 
 """
-for name in recipes:
-    text += f'* [{name}]({name.replace(" ", "-").replace(".", "-").replace("/", "-") + ".html"})\n'
+for recipe in recipes:
+    text += f'* [{recipe["name"]}]({pathify(recipe["name"],".html")})\n'
 
-text+="""
+text += """
 * * *
 
 """
