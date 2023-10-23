@@ -5,7 +5,8 @@ def export_markdown():
     recipes_json = load()
     recipes_md = []
     for recipe in recipes_json["recipes"]:
-        md_text = "# " + recipe["name"] + "\n"
+        md_text = "<title>" + recipe["name"] + "</title>\n"
+        md_text += "# " + recipe["name"] + "\n"
         md_text += recipe["desc"] + "  \n"
         if "recipes" in recipe:
             for subrecipe in recipe["recipes"]:

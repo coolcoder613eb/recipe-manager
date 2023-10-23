@@ -14,6 +14,7 @@ if not os.path.exists(FOLDER):
     os.mkdir(FOLDER)
 
 recipes = export_markdown()
+print(recipes)
 
 for recipe in recipes:
     with open(
