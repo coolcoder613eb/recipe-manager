@@ -8,12 +8,12 @@ FOLDER = os.path.abspath("./recipes/html")
 
 
 def run_server(
-    url="http://localhost:8000",
+    url="http://localhost:8086",
     server_class=HTTPServer,
     handler_class=SimpleHTTPRequestHandler,
 ):
     os.chdir(FOLDER)
-    server_address = ("", 8000)
+    server_address = ("127.0.0.1", 8086)
     httpd = server_class(server_address, handler_class)
     open_browser(url)
     httpd.serve_forever()
