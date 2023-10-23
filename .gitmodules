@@ -1,0 +1,3 @@
+[submodule "hecto"]
+	path = hecto
+	url = https://github.com/inhibitor1217/hecto
