@@ -1,3 +1,4 @@
+<title>Cheese Cake</title>
 # Cheese Cake
 A delicous cheesecake.  
 ## Base

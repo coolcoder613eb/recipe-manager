@@ -1,3 +1,4 @@
+<title>Pancakes</title>
 # Pancakes
 Pancakes, great for breakfast.  
 ## Ingredients
