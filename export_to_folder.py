@@ -50,16 +50,20 @@ for recipe in recipes:
     jsrecipes.append(
         [
             pathify(recipe["name"], ".html"),
-            markdown(f'- **[{recipe["name"]}]({pathify(recipe["name"],".html")})**  \n{recipe["desc"]}\n'),
+            markdown(
+                f'- **[{recipe["name"]}]({pathify(recipe["name"],".html")})**  \n{recipe["desc"]}\n'
+            ),
             recipe["text"],
         ]
     )
 
 print(jsrecipes)
-text = f"""<title>Recipes</title>
+text = (
+    f"""<title>Recipes</title>
 <script>
 function main(){{
-const files={jsrecipes};"""+"""
+const files={jsrecipes};"""
+    + """
 document.getElementById("search").value=(new URL(window.location.href)).searchParams.get('q')
 const search = (new URL(window.location.href)).searchParams.get('q').toLowerCase().split(" ");
 let matches = new Set();
@@ -91,6 +95,7 @@ if (matchArr.length == 0){
 * * *
 <div id="recipes">
 """
+)
 for recipe in recipes:
     text += f'\n- **[{recipe["name"]}]({pathify(recipe["name"],".html")})**  \n{recipe["desc"]}'
 
