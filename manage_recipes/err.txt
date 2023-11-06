@@ -1,0 +1,25 @@
+   Compiling manage_recipes v0.1.0 (/Users/coolcoder613/Repos/recipe-manager/manage_recipes)
+warning: unused import: `ErrorKind`
+ --> src/main.rs:3:22
+  |
+3 | use std::io::{Error, ErrorKind, Read, Write};
+  |                      ^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+error[E0500]: closure requires unique access to `*parent_recipe` but it is already borrowed
+  --> src/main.rs:78:33
+   |
+74 |             let subrecipes = parent_recipe
+   |                              ------------- borrow occurs here
+...
+78 |                 .unwrap_or_else(|| {
+   |                  -------------- ^^ closure construction occurs here
+   |                  |
+   |                  first borrow later used by call
+79 |                     parent_recipe.as_object_mut().unwrap().insert("subrecipes".to_string(), json!([]));
+   |                     ------------- second borrow occurs due to use of `*parent_recipe` in closure
+
+For more information about this error, try `rustc --explain E0500`.
+warning: `manage_recipes` (bin "manage_recipes") generated 1 warning
+error: could not compile `manage_recipes` (bin "manage_recipes") due to previous error; 1 warning emitted
