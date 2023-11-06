@@ -1,6 +1,7 @@
 import json
 import sys
 import subprocess
+import os
 
 FILE_PATH = "recipes.json"
 
@@ -19,7 +20,7 @@ def save_data(data):
 def edit_text(name):
     while True:
         if sys.platform == "nt":
-            subprocess.call([os.path.join(FOLDER, "hecto.exe"), name])
+            subprocess.call(["hecto.exe", name])
         else:
             subprocess.call(["nano", "-R", "-m", "-n", name])
         try:
@@ -28,7 +29,8 @@ def edit_text(name):
                 assert text
                 break
         except Exception as e:
-            continue
+            text = ""
+            break
     return text
 
 def list_recipes(data, parent_name=None):
