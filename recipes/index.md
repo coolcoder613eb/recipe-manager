@@ -1,6 +1,6 @@
 <title>Recipes</title>
 # Recipes
-<form action="/search.html" method="get">
+<form action="search.html" method="get">
 <input type="search" id="search" name="q">
 <input type="submit" value="Search">
 </form>
